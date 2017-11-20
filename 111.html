@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			input{margin:50px auto;}
+		</style>
+	</head>
+	<body>
+		<input type="text" title="哈哈哈" id="txt"/>
+	</body>
+</html>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="layer.js"></script>
+<script>
+	$(function(){
+		$('#txt').click(function(){
+			 layer.tips('hehehehehehe', '#txt', {
+				  tips: [1, '#f3c996'] //还可配置颜色
+				});
+		})
+	})
+</script>

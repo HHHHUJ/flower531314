@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/cart.css" />
+		<link rel="stylesheet" href="../css/calendar.css" />
+	</head>
+	<body>
+		<header>
+			<div class="top">
+				<p>你好,欢迎来到 <a href="##">531314</a><a href="login.html">[登录]</a><a href="register.html">[注册]</a></p>
+				<div id="list">
+					<dl>
+						<dt>
+							<a href="##">我的订单</a>
+							<i></i>
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="##">待付款订单</a></li>
+								<li><a href="##">待确认收货</a></li>
+								<li><a href="##">待评价交易</a></li>
+							</ul>
+						</dd>
+					</dl><dl>
+						<dt>
+							<a href="##">我的收藏</a>
+							<i></i>
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="##">店铺收藏</a></li>
+								<li><a href="##">商品收藏</a></li>
+							</ul>
+						</dd>
+					</dl><dl>
+						<dt>
+							<a href="##">客户服务</a>
+							<i></i>
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="##">帮助中心</a></li>
+								<li><a href="##">售后服务</a></li>
+								<li><a href="##">客户中心</a></li>
+							</ul>
+						</dd>
+					</dl><dl class="weixin">
+						<dt>
+							<a href="##">关注我们</a>
+							<i></i>
+						</dt>
+						<dd>
+							<h4>
+								扫描二维码<br />
+								关注商城微信号
+							</h4>
+							<img src="../imgs/erweima.jpg" alt="" />
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="logoinfo">
+				<div class="logo_top">
+					<div class="logo">
+						<h1><a href="../index.html"><span>531314</span></a></h1>
+					</div>
+				</div>
+				<ul class="info_list">
+					<li class="current">
+						<i class="step01"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>我的购物车</p>
+					</li><li>
+						<i class="step02"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>填写核对购物信息</p>
+					</li><li>
+						<i class="step03"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>支付提交</p>
+					</li><li>
+						<i class="step04"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>订单完成</p>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<form action="">
+			<div class="checkinfo_main">
+				<div class="titleinfo">
+					<h2>填写核对购物信息</h2>
+					<p>请仔细核对填写收货、发票等信息，以确保物流快递及时准确投递。</p>
+				</div>
+				<div class="receiveinfo">
+					<h4>收货人信息</h4>
+					<div class="newaddr">
+						<input type="radio" id="newaddr" checked="checked"/>&nbsp;&nbsp;
+						<lable for="newaddr">使用新地址</lable>&nbsp;&nbsp;
+						<lable><a href="##" target="_blank" class="serverStation">使用自提服务站</a></lable>
+					</div>
+					<div class="addrbox">
+						<p class="p1">
+							<span><i>*</i>收货人姓名：</span>
+							<input type="text" />
+						</p>
+						<p class="p2">
+							<span><i>*</i>所在地区：</span>
+							<em class="outer">
+								<select name="province" id="province">
+									<option value="请选择">请选择</option>
+								</select>
+								<select name="city" id="city">
+									<option value="请选择">请选择</option>
+								</select>
+								<select name="town" id="town">
+									<option value="请选择">请选择</option>
+								</select>
+							</em>
+						</p>
+						<p class="p3">
+							<span><i>*</i>详细地址：</span>
+							<em class="detailaddr">
+								<input type="text" /><br />
+								<strong>请填写真实地址，不需要重复填写所在地区</strong>
+							</em>
+						</p>
+						<p class="p4">
+							<span><i>*</i>手机号码：</span>
+							<input type="text" />&nbsp;(或) 固定电话：
+							<input type="text" />
+						</p>
+					</div>
+					<div class="btninfo"><a href="##">保存收货人信息</a></div>
+				</div>
+				<div class="payinfo">
+					<div class="paymethod">
+						<h4>支付方式</h4>
+						<p>在线支付</p>
+					</div>
+					<div class="paymethod">
+						<h4>发票信息</h4>
+						<p>不需要发票</p>
+					</div>
+					<div class="sendtime">
+						<h4>鲜花配送时间</h4>
+						<input name="lable" id="datelist" onFocus="setday(this);" size="9" maxlength="10" style="border:1px solid #cccccc;background-color:#fff;color:#777777;height:25px;width:159px;line-height:25px;margin-top:13px;" readonly>
+						<select name="hours" style="margin-right:10px;border:1px solid #cccccc;background:#fff;width: 66px;height:27px;line-height:27px;color:#777777;">
+							<option value="09:00">09:00</option>
+							<option value="10:00">10:00</option>
+							<option value="11:00">11:00</option>
+							<option value="12:00">12:00</option>
+							<option value="13:00">13:00</option>
+							<option value="14:00">14:00</option>
+							<option value="15:00">15:00</option>
+							<option value="16:00">16:00</option>
+							<option value="17:00">17:00</option>
+							<option selected="selected" value="18:00">18:00</option>
+						</select>前
+					</div>
+					<div class="goodslist">
+						<div class="infotitle">
+							<h2>商品清单</h2>
+							<a href="##">返回购物车</a>
+						</div>
+						<table>
+							<tr class="tr01">
+								<td class="w01"></td>
+								<td class="w02"></td>
+								<td class="w03">商品</td>
+								<td class="w04">单价(元)</td>
+								<td class="w05">数量</td>
+								<td class="w06">小计(元)</td>
+							</tr>
+							<tr class="tr02" >
+								<td colspan="7">店铺：<a href="##">春舞枝旗舰店</a></td>
+							</tr>
+							<tr class="tr03 tr_goods">
+								<td></td>
+								<td><a href="##"><img src="../imgs/xiaode.jpg"/></a></td>
+								<td class="td03"><a href="##">【春舞枝】大花束·向日葵 大花束·向日葵</a></td>
+								<td><span>218.00</span></td>
+								<td class="td05">
+									<span>1</span>
+								</td>
+								<td><span>218.00</span></td>
+							</tr>
+							<tr class="tr04 tr_goods">
+								<td></td>
+								<td><a href="##"><img src="../imgs/xiaode.jpg"/></a></td>
+								<td class="td03"><a href="##">【春舞枝】大花束·向日葵 大花束·向日葵</a></td>
+								<td><span>218.00</span></td>
+								<td class="td05">
+									<span>2</span>
+								</td>
+								<td><span>218.00</span></td>
+							</tr>
+							<tr class="tr05">
+								<td></td>
+								<td colspan="7">
+									买家留言：<textarea placeholder="选填：对本次交易的说明（建议填写已经和商家达成一致的说明）"></textarea>
+								</td>
+							</tr>
+							<tr class="tr06">
+								<td colspan="7">
+									<dl>
+										<dt>运费：</dt>
+										<dd><em>0.00</em>元</dd>
+									</dl>
+									<dl>
+										<dt>商品金额：</dt>
+										<dd><em>0.00</em>元</dd>
+									</dl>
+									<dl>
+										<dt>本店合计：</dt>
+										<dd><em>0.00</em>元</dd>
+									</dl>
+								</td>
+							</tr>
+							<tr class="tr07">
+								<td colspan="7">
+									<div>订单总金额：<em>314.00</em>元</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+		</form>
+		<div class="submit">
+			<a href="##">提交订单</a>
+		</div>
+		<div class="bottom1">
+			<p class="p1">
+				<a href="##">首页</a>  |
+				<a href="##">联系我们</a>  |
+				<a href="##">关于我们</a>
+			</p>
+			<p>Copyright 2015 闽ICP备12008006号-1</p>
+			<p class="p3"><a href="##">站长统计</a></p>
+		</div>
+		<script src="../jquery-3.2.1.min.js"></script>
+		<script src="../js/area.js"></script>
+		<script src="../js/select.js"></script>
+		<script src="../js/calendar.js"></script>
+		<script src="../js/index.js"></script>
+	</body>
+</html>

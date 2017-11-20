@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/register.css" />
+	</head>
+	<body>
+		<div class="logo_top">
+			<div class="logo">
+				<h1><a href="../index.html"><span>531314</span></a></h1>
+			</div>
+		</div>
+		<div class="register">
+			<div class="register_left">
+				<h3>注册之后你还可以</h4>
+				<ul>
+					<li><i></i>购买商品支付订单</li>
+					<li><i></i>申请开店销售商品</li>
+					<li><i></i>空间好友推送分享</li>
+					<li><i></i>收藏商品关注店铺</li>
+					<li><i></i>商品咨询服务评价</li>
+					<li><i></i>安全交易诚信无忧</li>
+				</ul>
+				<h3>如果您是本站用户</h3>
+				<div class="login-now">
+					<span>我已经注册过账号，立即 &nbsp;&nbsp;<a href="login.html" class="login-a">登录</a></span>
+					<span>&nbsp;或是&nbsp;&nbsp;<a href="##" class="findpsw">找回密码?</a></span>
+				</div>
+			</div>
+			<div class="register_right">
+				<h3>用户注册</h3>
+				<p>用户名<input type="text" class="tip username" title="3-15位字符，可由中文、英文、数字及“_”、“-”组成"/></p>
+				<lable class="lable_txt01 lable_txt"></lable>
+				<p>设置密码<input type="password" class="tip psw" title="6-20位字符，可由英文、数字及标点符号组成"/></p>
+				<lable class="lable_txt02 lable_txt"></lable>
+				<p>确认密码<input type="password" class="tip repeat_psw" title="请再次输入您的密码"/></p>
+				<lable class="lable_txt03 lable_txt"></lable>
+				<p>邮箱<input type="text" class="tip email" title="请输入常用的邮箱，将用来找回密码、接受订单通知等"/></p>
+				<lable class="lable_txt04 lable_txt"></lable>
+				<p>验证码<input type="text" id="verify" class="tip verify" title="请输入验证码，不区分大小写"/><span><img id="verify_box"/></span><a href="javascript:void(0)" id="dont_see">看不清，换一张</a></p>
+				<lable class="lable_txt05 lable_txt"></lable>
+				<p>
+					<input type="submit" id="submit" class="submit" value="立即注册"/>
+					<input type="checkbox" class="checkbox"/><i>同意并阅读<a href="##">服务协议</a></i>
+				</p>
+			</div>
+		</div>
+		<div class="bottom1">
+			<p class="p1">
+				<a href="##">首页</a>  |
+				<a href="##">联系我们</a>  |
+				<a href="##">关于我们</a>
+			</p>
+			<p>Copyright 2015 闽ICP备12008006号-1</p>
+			<p class="p3"><a href="##">站长统计</a></p>
+		</div>
+	</body>
+</html>
+<script src="../jquery-3.2.1.min.js"></script>
+<script src="../jquery.contip.js"></script>
+<script>
+$(function(){
+		//获取焦点时得到气泡tip
+		var tips = $('.register_right')
+		tips.on('focus','.tip',function(){
+			
+			$(this).contip({
+			    trigger: 'focus',//获得焦点时触发
+			    align: 'top',//出现在元素的上方
+			    bg: '#fff9c9',
+			    fade: 360,//淡入淡出
+			    rise: 2,//tip的上下位子
+			    html: $(this).attr('title'),
+			    color:'#000000'
+			  }).show();
+		})
+			
+		//第一次加载时显示
+		toImg();
+		//获取图像验证码
+		function toImg(){
+			var url="http://route.showapi.com/932-2?showapi_appid=%2047026&showapi_sign=5f640c4193724e2f894ae9526c239e3d&length=4&specials=false&"
+			$.getJSON(url,function(data){
+				$('#verify_box').attr('src',data.showapi_res_body.image)
+					.data("sid", data.showapi_res_body.sid);
+			})
+		}
+		//点击时刷新图片验证码
+		$('#dont_see').click(function(){
+			toImg();
+		})
+		//文本框改变并且失去焦点时
+		$('.register_right').on('change','input',function(){
+			reg();
+			
+		})	
+			
+	
+		//注册
+		$('.submit').click(function(){
+			hint();
+			var flag_r = reg();
+			var flag_e = null;
+			//判断用户名是否可用
+			$.get("../php/register.php",{username:$(".username").val()},function(data){
+				if(data.status==0){
+					$('.lable_txt01').text('该用户名已经存在');
+					flag_e = false;
+				}else if(data.status==1){
+					flag_e = true;
+				}else{
+					alert("error")
+				}
+			},"json")
+			//校验验证码
+			var _value = $('#verify').val();
+			var url = "http://route.showapi.com/932-1?showapi_appid=%2047026&showapi_sign=5f640c4193724e2f894ae9526c239e3d&checkcode="+ _value +"&sid=" + $('#verify_box').data("sid");
+			$.getJSON(url,function(data){
+				if(data.showapi_res_body.valid&&flag_e&&flag_r){
+					register_name()
+					console.log(1)
+				}
+			})
+			
+		})
+		
+		//如果为空则提示
+		function hint(){
+			if(!$(".username").val()){
+				$('.lable_txt01').text('用户名不能为空')
+				
+			}
+			if(!$(".psw").val()){
+				$('.lable_txt02').text('密码不能为空')
+				
+			}
+			if(!$(".repeat_psw").val()){
+				$('.lable_txt03').text('请再次输入您的密码')
+				
+			}
+			if(!$(".email").val()){
+				$('.lable_txt04').text('电子邮箱不能为空')
+				
+			}
+			if(!$(".verify").val()){
+				$('.lable_txt05').text('请输入验证码')
+				
+			}
+		}
+		//注册账号
+		
+		function register_name(){
+			var users={
+				username : $(".username").val(),
+				password : $(".psw").val(),
+				email : $(".email").val()
+			}
+			$.post("../php/register2.php", users, function(data){
+				if (data.status == 1) 
+					location.href = "login.html";
+			}, "json");
+		}
+		//正则验证
+		function reg(){
+			var userreg = /\w{3,15}$/.test($(".username").val());
+			var pswregs = /\w{6,20}/.test($(".psw").val());
+			var emailregs = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test($(".email").val());
+			var repeat_val = $(".repeat_psw").val();
+				if(!userreg){
+					$('.lable_txt01').text('用户名必须在3-15个字符之间')
+				}
+				if(!pswregs){
+					$('.lable_txt02').text('密码长度应在6-20个字符之间')
+					
+				}
+				if(!emailregs){
+					$('.lable_txt04').text('这不是一个有效的电子邮箱');
+				}
+			
+				if($(".psw").val()!=repeat_val){
+					$('.lable_txt03').text('两次输入的密码不一致');
+				}
+			if(userreg&&pswregs&&emailregs){
+				return true;
+			}else{
+				return false;
+			}
+		}
+});
+</script>

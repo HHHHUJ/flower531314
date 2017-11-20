@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/zoom.css" />
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+<script src="../jquery-3.2.1.min.js"></script>
+<script>
+	define(["jquery", "cookie"], function($){
+	// 加载头部，如果用户有登录，则显示登录成功的用户信息
+	$.ajax("/html/include/header.html").then(function(data){
+		$(".header").html(data);
+	}).then(function(){
+		var _user = $.cookie("loginUser");
+		if (_user)
+			$(".login_register").html(`个人信息：<a href="#">${_user}</a>`);
+	}).then(function(){
+		$(".ad").hover(function(){
+			console.log("显示大广告图片")
+		}, function(){
+			console.log("显示小的图片")
+		});
+	});
+
+	// 加载尾部
+	$(".footer").load("/html/include/footer.html");
+});
+</script>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="logo_top">
+			<div class="logo">
+				<h1><a href="../index.html"><span>531314</span></a></h1>
+			</div>
+		</div>
+		<div class="login_main">
+			<div class="flower_img"><img src="../imgs/loginflower.jpg" alt="" /></div>
+			<div class="login_interface">
+				<h3>用户登录</h3>
+				<p><i>用户名</i><input type="text" class="username"/></p>
+				<lable class="lable_txt01 lable_txt"></lable>
+				<p><i>密&nbsp;&nbsp;&nbsp;码</i><input type="password" class="psw"/></p>
+				<lable class="lable_txt02 lable_txt"></lable>
+				<p><i>验证码</i><input type="text" id="verify"/><span><img id="verify_box"/></span><a href="javascript:void(0)" id="dont_see">看不清，换一张</a></p>
+				<lable class="lable_txt03 lable_txt"></lable>
+				<p>
+					<i></i><input type="submit" class="submit" id="submit"/><strong>忘记密码?</strong>
+				</p>
+				<span class="span">还不是本站会员？立即<a href="register.html">注册</a></span>
+			</div>
+		</div>
+	</body>
+	<script src="../jquery-3.2.1.min.js"></script>
+	<script>
+		$(function(){
+			toImg();
+			$('#dont_see').click(function(){
+				toImg();
+			})
+			//添加图片验证
+			function toImg(){
+				var url="http://route.showapi.com/932-2?showapi_appid=%2047026&showapi_sign=5f640c4193724e2f894ae9526c239e3d&length=4&specials=false&"
+				$.getJSON(url,function(data){
+					$('#verify_box').attr('src',data.showapi_res_body.image)
+					.data("sid", data.showapi_res_body.sid);
+				})
+			}
+			//点击提交校验验证码
+			$('#submit').click(function(){
+				var v_h = hint();
+				var v_r = reg();
+				var _value=$('#verify').val();
+				var url="http://route.showapi.com/932-1?showapi_appid=%2047026&showapi_sign=5f640c4193724e2f894ae9526c239e3d&checkcode="+ _value +"&sid=" + $('#verify_box').data("sid");
+				$.getJSON(url,function(data){
+					if(data.showapi_res_body.valid&&v_h&&v_r){
+						//判断数据是否存在
+						$.get('../php/login.php',{username : $(".username").val(),password : $(".psw").val()
+							},function(data){
+								if(data.status==0){
+									location.href='../index.html';
+								}
+						},"json")
+					}else{
+						alert("failed");
+					}
+				})	
+			})
+			
+			
+			
+			//验证是否为空
+			function hint(){
+				var u_val = $(".username").val();
+				var p_val = $(".psw").val();
+				var v_val = $("#verify").val();
+				if(!u_val){
+					$('.lable_txt01').text('用户名不能为空')
+				}
+				if(!p_val){
+					$('.lable_txt02').text('密码不能为空')
+				}
+				if(!v_val){
+					$('.lable_txt03').text('请输入验证码')
+				}
+				var loginInput = $('.login_interface').find('input').not('.submit');
+				if(u_val!=''&&p_val!=''&&v_val!=''){
+					return true;
+				}else{
+					return false;
+				}
+				
+			}
+			//var v_h = hint();//把验证结果为空返回给一个变量
+			function reg(){
+				var userreg = /\w{3,15}$/.test($(".username").val());
+				var pswreg = /^\w{6,20}$/.test($(".psw").val());
+				if(!userreg){
+					$('.lable_txt01').text('用户名必须在3-15个字符之间')
+				}
+				if(!pswreg){
+					$('.lable_txt02').text('密码长度应在6-20个字符之间')
+				}
+				if(userreg&&pswreg){
+					return true;
+				}else{
+					return false;
+				}
+			}
+			//var v_r = reg();//把正则判断结果返回给一个变量
+			//文本框改变时change触发
+			$('.login_interface').on('change','input',function(){
+				reg();
+			})
+			
+		})
+	</script>
+</html>

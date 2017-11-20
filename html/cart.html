@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/cart.css" />
+		
+	</head>
+	<body>
+		<header>
+			<div class="top">
+				<p>你好,欢迎来到 <a href="##">531314</a><a href="html/login.html">[登录]</a><a href="html/register.html">[注册]</a></p>
+				<div id="list">
+					<dl>
+						<dt>
+							<a href="##">我的订单</a>
+							<i></i>
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="##">待付款订单</a></li>
+								<li><a href="##">待确认收货</a></li>
+								<li><a href="##">待评价交易</a></li>
+							</ul>
+						</dd>
+					</dl><dl>
+						<dt>
+							<a href="##">我的收藏</a>
+							<i></i>
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="##">店铺收藏</a></li>
+								<li><a href="##">商品收藏</a></li>
+							</ul>
+						</dd>
+					</dl><dl>
+						<dt>
+							<a href="##">客户服务</a>
+							<i></i>
+						</dt>
+						<dd>
+							<ul>
+								<li><a href="##">帮助中心</a></li>
+								<li><a href="##">售后服务</a></li>
+								<li><a href="##">客户中心</a></li>
+							</ul>
+						</dd>
+					</dl><dl class="weixin">
+						<dt>
+							<a href="##">关注我们</a>
+							<i></i>
+						</dt>
+						<dd>
+							<h4>
+								扫描二维码<br />
+								关注商城微信号
+							</h4>
+							<img src="../imgs/erweima.jpg" alt="" />
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="logoinfo">
+				<div class="logo_top">
+					<div class="logo">
+						<h1><a href="../index.html"><span>531314</span></a></h1>
+					</div>
+				</div>
+				<ul class="info_list">
+					<li class="current">
+						<i class="step01"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>我的购物车</p>
+					</li><li>
+						<i class="step02"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>填写核对购物信息</p>
+					</li><li>
+						<i class="step03"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>支付提交</p>
+					</li><li>
+						<i class="step04"></i>
+						<div class="hr"></div>
+						<div class="minCircle"></div>
+						<p>订单完成</p>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<div class="cart_main">
+			<h3>我的购物车</h3>
+			<p>查看购物车商品清单，增加减少商品数量，并勾选想要的商品进入下一步操作。</p>
+			<div class="cart">
+				<table>
+					<tr class="tr01">
+						<td class="w01"><input type="checkbox" id="checkall"/>全选</td>
+						<td class="w02"></td>
+						<td class="w03">商品</td>
+						<td class="w04">单价(元)</td>
+						<td class="w05">数量</td>
+						<td class="w06">小计(元)</td>
+						<td class="w07">操作</td>
+					</tr>
+					<tr class="tr02" >
+						<td colspan="7">店铺：<a href="##">春舞枝旗舰店</a></td>
+					</tr>
+					<!--<tr class="tr03 tr_goods">
+							<td class="td01"><input type="checkbox" id="checkone01"/></td>
+							<td class="td02"><a href="##"><img src="../imgs/xiaode.jpg"/></a></td>
+							<td class="td03"><a href="##">【春舞枝】大花束·向日葵 大花束·向日葵</a></td>
+							<td class="td04"><span>218.00</span></td>
+							<td class="td05">
+								<a href="##">-</a>
+								<input type="text" value="1" class="numtxt"/>
+								<a href="##">+</a>
+							</td>
+							<td class="td06"><span>218.00</span></td>
+							<td class="td07">
+								<a href="##">收藏</a><br />
+								<a href="##" class="del">删除</a>
+							</td>
+					</tr>-->
+					<tr class="tr04">
+						<td colspan="7">
+							<div>店铺合计: <em id="storeTotal">314.00</em>元</div>
+						</td>
+					</tr>
+					<tr class="tr05">
+						<td colspan="7">
+							<div>商品总价（不含运费）<em id="totalPrice">314.00</em>元</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="checkinfo">
+			<a href="checkshoppinginfo.html" id="checkinfo">下一步，填写核对购物信息</a>
+		</div>
+		<div class="guess">
+			<p>猜您喜欢的宝贝</p>
+			<div class="recommend">暂无商品向您推荐</div>
+		</div>
+		<div class="bottom1">
+			<p class="p1">
+				<a href="##">首页</a>  |
+				<a href="##">联系我们</a>  |
+				<a href="##">关于我们</a>
+			</p>
+			<p>Copyright 2015 闽ICP备12008006号-1</p>
+			<p class="p3"><a href="##">站长统计</a></p>
+		</div>
+		<script src="../jquery-3.2.1.min.js"></script>
+		<script src="../js/cart.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/jquery.cookie.js"></script>
+	</body>
+</html>

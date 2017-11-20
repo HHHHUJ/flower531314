@@ -1,0 +1,51 @@
+main .banner{height:408px;text-align:center;overflow: hidden;position:relative;}
+main .banner img{height:408px;margin:0 -100%;}
+main .banner .secnav{padding-left:15px;height:408px;width:214px;background:#f4c8b4;position:absolute;left:57px;top:0;}
+main .banner .secnav .flower{overflow:hidden;width:214px;height:86px;}
+main .banner .secnav .flower h3{margin-top:10px;font-size: 12px;color:#666666;text-align: left;}
+main .banner .secnav .flower ul li{margin-top:15px;font-size: 12px;text-align: left;float:left;padding-right:20px;}
+main .banner .secnav .flower ul li a{color:white;}
+main .banner .secnav .flower ul li a:hover{color:red;}
+main .banner .notice{border-right:1px solid #dfe1de;width:210px;height:408px;position: absolute;right:22px;top:0;background:#ffffff;}
+main .banner .notice .noti{width:210px;height:160px;border-bottom:1px solid #e7e7e7;}
+main .banner .notice .noti ul li{font-size:12px;color:#999999;width:70px;height:76px;padding: 52px 10px 0 10px;float:left;background:url(../imgs/CP.png) no-repeat center center;}
+main .banner .notice .noti ul .li1{background-position: 0 0;}
+main .banner .notice .noti ul .li2{background-position: -70px 0;}
+main .banner .notice .noti ul .li3{background-position: -140px 0;}
+main .banner .notice .noti ul .li4{background-position: 0 -73px;}
+main .banner .notice .noti ul .li5{background-position: -70px -73px;}
+main .banner .notice .noti ul .li6{background-position: -140px -73px;}
+main .banner .notice .noti1{height:153px;width:210px;}
+main .banner .notice .noti1 ul li{list-style:square inside;margin-left:12px;font-size: 12px;text-align: left;white-space:nowrap;margin-top:12px;}
+main .banner .notice .noti1 ul li a{color:#555555;}
+main .banner .notice .noti1 ul li a:hover{color:red;}
+main .banner .notice .noti1 ul time{font-size:12px;color:#9999b8;}
+main .newpro{width:990px;height:45px;margin-left:32px;}
+main .newpro p{background:white;font-size:12px;color:#434343;width:198px;height:47px;border-bottom:2px solid #434343;line-height:47px;text-align: center;cursor:pointer;}
+main .pic{margin-left:32px;width:990px;height:253px;border-bottom:2px solid #f0f0f0;}
+main .pic dl{border-top:2px solid #f0f0f0;float:left;width:198px;height:253px;padding:15px;border-right:1px dashed #f0f0f0;}
+main .pic dl:nth-child(1){border-top:none;}
+main .pic dl:nth-child(5){border-right:none;}
+main .pic dl dt{height:162px;width:162px;}
+main .pic dl dt img{width:162px;height:162px;}
+main .pic dl dd{height:72px;width:162px;font-size:12px;color:#999999;}
+main .pic dl dd div{margin-top:10px;}
+main .pic dl dd p a{display:block;font-size:12px;color:#555555;height:34px;overflow:hidden;}
+main .pic dl dd div span{font-weight:bold;color:#cc0000;font-size:14px;vertical-align: middle;}
+main .floor{height:614px;width:1200px;margin:0 auto;}
+main .floor>img{display:block;}
+main .floor ._middle ._left{float:left;}
+main .floor ._middle ._left ul{margin-top:-4px;width: 212px;height:123px;background:#ffa6b8;}
+main .floor ._middle ._left ul li{border-bottom:1px solid #fff;float:left;width:101px;height:41px;text-align: center;line-height: 41px;}
+main .floor ._middle ._left ul li a{font-size:13px;color:white;display:block;}
+main .floor ._middle ._left ul li:hover{background:rgba(2,2,2,0.3);}
+main .floor ._middle ._img{float:left;width:792px;height:511px;}
+main .floor ._middle ._img dl{border-bottom:1px solid #e0e0e0;float:left;width:198px;height:256px;padding:15px;border-right:1px solid #e0e0e0;}
+main .floor ._middle ._img dl dt{height:162px;width:162px;}
+main .floor ._middle ._img dl dt img{width:162px;height:162px;}
+main .floor ._middle ._img dl dd{height:72px;width:162px;}
+main .floor ._middle ._img dl dd div{margin-top:10px;font-weight:bold;color:#cc0000;font-size:14px;}
+main .floor ._middle ._img dl dd p a{display:block;font-size:12px;color:#555555;height:34px;overflow:hidden;}
+main .floor ._middle ._img dl dd div span{text-decoration:line-through;padding-left:10px;vertical-align: middle;font-size:12px;color:#999999;}
+main .floor ._middle .giftbox{float:left;width:196px;}
+main .floor ._middle .giftbox>img{width:100%;}

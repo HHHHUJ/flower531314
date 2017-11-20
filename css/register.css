@@ -1,0 +1,57 @@
+*{margin: 0;padding:0;box-sizing: border-box;}
+ul li{list-style: none;}
+.logo_top{width:920px;height:107px;margin-left:140px;overflow:hidden;}
+.logo{
+	width: 240px;
+	height: 60px;
+	margin-top: 44px;
+}
+.logo h1 a{
+	display: block;
+	width: 240px;
+	height: 60px;
+	background: url(../imgs/logo.png) no-repeat center center;
+}
+.logo h1 a span{display: none;}
+.register{width:920px;height:430px;margin-left:140px;margin-top:45px;}
+.register .register_left{width:517px;height:331px;float:left;padding-left:35px;}
+.register .register_left h3{font-size:18px;color:#555555;margin-top:25px;}
+.register .register_left ul{height:210px;width:420px;margin-top:20px;border-bottom:1px dashed #E7E7E7;}
+.register .register_left ul li{margin-bottom:20px;margin-left:10px;float:left;width:200px;height:48px;line-height:48px;vertical-align: middle;}
+.register .register_left ul li i{background:url(../imgs/login.png) no-repeat center center;display:inline-block;width:48px;height:48px;margin-right:10px;vertical-align: middle;}
+.register .register_left ul li:nth-child(1) i{background-position:-304px -48px;}
+.register .register_left ul li:nth-child(2) i{background-position:-256px 0px;}
+.register .register_left ul li:nth-child(3) i{background-position:-352px 0px;}
+.register .register_left ul li:nth-child(4) i{background-position:-304px 0px;}
+.register .register_left ul li:nth-child(5) i{background-position:-352px -48px;}
+.register .register_left ul li:nth-child(6) i{background-position:-256px -48px;}
+.register .register_left .login-now{width:320px;height:30px;margin-left:22px;}
+.register .register_left .login-now span{display:inline-block;color:#555;font-size:12px;}
+a{font-size:12px;line-height:26px;text-align:center;text-decoration: none;}
+.register .register_left .login-now span .login-a{color:#555555;display:inline-block;height:26px;width:50px;background:#f6f6f6;border:1px solid #c1c1c1;border-radius:5px; }
+.register .register_left .login-now span .findpsw{color:#0066cc;font-weight:bold;}
+.register .register_right{background:#f9f9f9;padding-right:35px;width:401px;height:392px;border:1px solid #dddddd;float:right;position:relative;}
+.register .register_right h3{font-size:18px;color:#555555;margin-left:26px;margin-top:18px;}
+.register .register_right p{float:right;margin-top:25px;font-size:12px;color:#777777;}
+.register .register_right .lable_txt{height:27px;width:230px;display:block;position:absolute;line-height:27px;color:red;font-size:13px;}
+.register .register_right .lable_txt01{top:90px;left:27%;}
+.register .register_right .lable_txt02{top:143px;left:27%;}
+.register .register_right .lable_txt03{top:193px;left:27%;}
+.register .register_right .lable_txt04{top:246px;left:27%;}
+.register .register_right .lable_txt05{top:299px;left:27%;}
+.register .register_right p input{margin-right:30px;margin-left:12px;border:none;border:1px solid #bbbbbb;outline-color: #f08300;height:26px;width:227px;}
+.register .register_right p #verify{width:60px;margin-right:-5px;}
+.register .register_right p a{font-size:12px;color:#999999;}
+.register .register_right p span{vertical-align:middle;margin-left:13px;margin-right:5px;display:inline-block;border:1px solid #555;height:29px;width:100px;line-height:29px;letter-spacing: 20px;font-weight:bold;}
+.register .register_right p span img{width:100%;height:100%;}
+.register .register_right p .submit{margin-right:15px;width:98px;height:34px;line-height:34px;color:white;font-size:14px;background:url(../imgs/login.png) no-repeat 0px -58px;}
+.register .register_right p .checkbox{width:14px;height:14px;outline:none;margin-right:13px;margin-left:4px;}
+.register .register_right p i{font-style:normal;font-size:12px;color:#666666;}
+.register .register_right p i a{font-size:12px;color:#c53801;}
+.register .register_right p i a:hover{text-decoration: underline;}
+.bottom1{height:80px;padding:0 57px;background:#f5f5f5;margin-top:35px;}
+.bottom1 p{font-size: 12px;word-spacing:5px;text-align:center;color:#666666;padding:3px 0;}
+.bottom1 .p1>a{color:#666666;}
+.bottom1 .p1>a:hover{text-decoration: underline;}
+.bottom1 .p3>a{color:#666666;}
+.bottom1 .p3>a:hover{text-decoration: underline;}
